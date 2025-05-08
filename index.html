@@ -54,13 +54,23 @@
         
         #settings-panel {
             position: absolute;
-            top: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 15px;
-            padding: 15px;
-            box-shadow: -2px 2px 10px rgba(0,0,0,0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
             z-index: 100;
+            width: 80%;
+            max-width: 400px;
+        }
+        
+        #settings-panel h2 {
+            text-align: center;
+            color: #4a90e2;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
         
         #settings-toggle {
@@ -78,21 +88,30 @@
         }
         
         .settings-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .settings-label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: bold;
+            color: #333;
+            font-size: 16px;
         }
         
         select, input {
             width: 100%;
-            padding: 8px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 16px;
+            background-color: #f9f9f9;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
         }
         
         button {
@@ -193,6 +212,7 @@
         <button id="settings-toggle">Settings</button>
         
         <div id="settings-panel" class="hidden">
+            <h2>Settings</h2>
             <div class="settings-group">
                 <label class="settings-label">Bubble Size:</label>
                 <select id="bubble-size">
